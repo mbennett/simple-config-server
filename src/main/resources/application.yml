@@ -1,17 +1,18 @@
 spring:
+  application:
+    name: simple-config-server
   profiles:
     active:
     - default
-  application:
-    name: simple-config-server
   cloud:
     config:
       server:
         git:
           # set env variable to wherever your simple-config-files repository is locally
           uri: ${simple-config-files-location}
-      discovery:
-        enabled: true
+#      discovery:
+#        service-id: simple-config-server
+#        enabled: true
 server:
   port: 8888
 management:
