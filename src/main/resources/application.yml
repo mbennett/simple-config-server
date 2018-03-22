@@ -1,19 +1,19 @@
 spring:
+  profiles:
+    active:
+    - default
   application:
     name: simple-config-server
   cloud:
     config:
       server:
         git:
+          # set env variable to wherever your simple-config-files repository is locally
           uri: ${simple-config-files-location}
+      discovery:
+        enabled: true
 server:
   port: 8888
 management:
   security:
     enabled: false
-eureka:
-  client:
-    region: default
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
