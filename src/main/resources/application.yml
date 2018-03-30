@@ -1,20 +1,7 @@
-spring:
-  application:
-    name: simple-config-server
-  profiles:
-    active:
-    - default
-  cloud:
-    config:
-      server:
-        git:
-          # set env variable to wherever your simple-config-files repository is locally
-          uri: ${simple-config-files-location}
-#      discovery:
-#        service-id: simple-config-server
-#        enabled: true
 server:
   port: 8888
-management:
-  security:
-    enabled: false
+info:
+  artifactId: "@project.artifactId@"
+  description: "@project.description@"
+  version: "@project.version@"
+    
